@@ -17,7 +17,7 @@ class Task4 {
 
     fun runAllMethods(func: (Double) -> Double, integr: (Double) -> Double) {
         val J = integr(b) - integr(a)
-        val methods = IntegrationMethods(function, a, b)
+        val methods = IntegrationMethods(func, a, b)
 
         println("Left rectangle:")
         var result = methods.leftRectangle()
@@ -101,6 +101,7 @@ class Task4 {
 
     fun run() {
         println("Approximate calculation of the integral using quadrature formulas")
+        println("f(x) = exp(x) + sin(x)")
         println("Enter the integration segment:")
         while (true) {
             val segment = readln().split(" ").map { it.toDouble() }
